@@ -1,0 +1,7 @@
+Project: Detecting function of the minimal proteome 
+I want to examine all of the proteins that mycolasma laboratorium syn3A expresses. 
+please download the genome of syn3A from JCVI and proceed doing the analyses detailed below. 
+
+Step 1: sequence based homology
+Specifically, I want to test their sequence homology to all mycoplasmal proteins (that are not in subspecies capri)
+Then, I would like to test their sequence homology to all bacterial proteins that are not mycoplasmas. 

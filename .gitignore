@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Logs
+*.log
+nohup.out
+logs/
+
+# Data files (too large for git)
+*.fasta
+*.fa
+*.faa
+*.fna
+*.gb
+*.gbk
+
+# Results
+results/
+*_results/
+*.csv
+*.json
+*.xml
+*.html
+
+# Temporary files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Keep only scripts and documentation
+!scripts/*.py
+!README.md
+!blast_pipeline/README.md
+!experiment_plan.txt
