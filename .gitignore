@@ -15,8 +15,14 @@ pip-delete-this-directory.txt
 *.log
 nohup.out
 logs/
+blast_pipeline/fast_results/
+blast_pipeline/fast_test/
+blast_pipeline/web_blast_test/
+blast_pipeline/single_test/
+blast_pipeline/test_output/
 
 # Data files (too large for git)
+data/
 *.fasta
 *.fa
 *.faa
@@ -40,8 +46,10 @@ results/
 *.swo
 *~
 
-# Keep only scripts and documentation
-!scripts/*.py
-!README.md
-!blast_pipeline/README.md
-!experiment_plan.txt
+# Jupyter
+.ipynb_checkpoints/
+
+# Distribution
+*.egg-info/
+dist/
+build/

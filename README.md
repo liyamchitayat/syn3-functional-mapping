@@ -6,43 +6,50 @@ BLAST-based pipeline for detecting bacterial homologs in the Mycoplasma laborato
 
 This project analyzes all 438 proteins from syn3A to identify which have non-mycoplasmal bacterial homologs, helping understand the functional composition of this minimal synthetic organism.
 
-## Pipeline Features
+## Project Structure
 
-- Web-based BLAST (no local installation required)
-- Parallel processing with configurable workers
-- Automatic retry and error handling
-- Progress tracking and ETA estimation
-- Comprehensive result filtering
+```
+syn3a-blast-pipeline/
+├── src/
+│   ├── pipeline/       # BLAST pipeline implementations
+│   ├── analysis/       # Analysis and post-processing scripts
+│   └── utils/          # Utility functions and data download
+├── data/               # Input data (FASTA files)
+├── results/            # Pipeline outputs
+├── cluster/            # HPC/cluster scripts
+├── tests/              # Test scripts
+├── docs/               # Documentation
+└── run_pipeline.py     # Main entry point
+```
 
 ## Quick Start
 
-### Installation
+### 1. Installation
 
 ```bash
 git clone <repository-url>
-cd syn3_funcitonal_mapping
+cd syn3a-blast-pipeline
 pip install -r requirements.txt
 ```
 
-### Download syn3A proteins
+### 2. Download Data
 
 ```bash
-# The syn3A proteins file is required but not included in git
-# Download from NCBI or use provided script
-python scripts/download_syn3a.py
+# Download syn3A proteins from NCBI
+python src/utils/download_syn3a.py
 ```
 
-### Run Analysis
+### 3. Run Analysis
 
 ```bash
 # Test run (5 proteins)
-python blast_pipeline/scripts/fast_blast_pipeline.py syn3A_proteins.fasta --test
+python run_pipeline.py data/syn3A_proteins.fasta --test
 
-# Full analysis with 6 workers
-python blast_pipeline/scripts/fast_blast_pipeline.py syn3A_proteins.fasta --workers 6
+# Full analysis with 8 workers
+python run_pipeline.py data/syn3A_proteins.fasta --workers 8
 
-# Run on cluster with more workers
-python blast_pipeline/scripts/fast_blast_pipeline.py syn3A_proteins.fasta --workers 32
+# Resume from specific protein
+python run_pipeline.py data/syn3A_proteins.fasta --start 100
 ```
 
 ## Cluster Deployment

@@ -19,7 +19,7 @@ source blast_env/bin/activate
 pip install -r requirements.txt
 
 # Run BLAST pipeline with many workers
-python blast_pipeline/scripts/fast_blast_pipeline.py syn3A_proteins.fasta \
+python run_pipeline.py data/syn3A_proteins.fasta \
     --workers 32 \
     --output-dir cluster_results \
     2>&1 | tee blast_cluster.log
